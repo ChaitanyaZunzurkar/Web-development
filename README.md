@@ -1,0 +1,1 @@
+This a repo dedicated to web development. where i will add all the kind of practice that i will do to learn web develpoment.
