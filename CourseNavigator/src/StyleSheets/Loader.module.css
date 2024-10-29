@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+    width: 99vw;
+    height: 99vh;
+  }
+  
+  .loader {
+    border: 8px solid white;
+    border-top: 8px solid #333; /* Dark color for one side */
+    /* border-left: 12px solid #333; Dark color for another side */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite; /* Infinite rotation animation */
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
