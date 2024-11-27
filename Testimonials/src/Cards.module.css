@@ -1,0 +1,100 @@
+.curaousal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.curaousalBtn {
+  border: none;
+  background-color: white;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.srpriseBtn {
+  padding: 10px;
+  color: white;
+  background-color: rgb(101, 3, 238);
+  border: none;
+  border-radius: 4px;
+}
+
+.designation {
+  color: rgb(200, 0, 255);
+}
+
+.profilePic {
+  position: absolute;
+  top: 2.5rem;
+  left: 5.5rem;
+}
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: violet;
+}
+
+.actualImg {
+  position: absolute;
+  width: 99px;
+  height: 99px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 10;
+  top: 6px;
+  left: -5px;
+}
+
+.card {
+  background-color: white;
+  width: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 45vh;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px solid black;
+  margin: 3rem;
+}
+
+.NameAndDesginationInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.messageContainer p {
+  padding: 1rem 4rem;
+  text-align: center;
+}
+.quot {
+  text-align: center;
+  font-size: 25px;
+}
+
+.img {
+  top: 6px;
+  left: -5px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 102px;
+  width: 102px;
+  border-radius: 50%;
+}
