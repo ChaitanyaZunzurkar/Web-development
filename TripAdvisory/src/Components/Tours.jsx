@@ -10,12 +10,13 @@ function Tours() {
 
   function RefeshHandler() {
     setData(tours)
+    setEmpty(false)
   }
 
   function intrestHandler(id) {
     const updatedData = data.filter(tour => tour.id != id)
     if(updatedData.length === 0) {
-      setEmpty(!isEmpty);
+      setEmpty(true);
     }
     else {
       setData(updatedData)
@@ -26,7 +27,7 @@ function Tours() {
     <div className="tours-container">
       {
         isEmpty ? 
-        <EmptyPage /> :
+        <EmptyPage RefeshHandler={RefeshHandler}/> :
         data.map((place) => (
           <Cards place={place} key={place.id} intrestHandler={intrestHandler} />
         ))
