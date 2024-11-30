@@ -1,30 +1,31 @@
-import { useEffect, useState } from "react";
 import style from "../Stylesheet/Random.module.css";
-import axios from "axios";
 import { ClipLoader } from 'react-spinners';
+import UseGifs from "../CostumHooks/useGIfs";
 
 const Random = () => {
-    const [gifs , setGifs] = useState('')
-    const [loading , setLoading] = useState(false)
+    // const [gifs , setGifs] = useState('')
+    // const [loading , setLoading] = useState(false)
 
-    async function fetchData()  {
-        setLoading(true)
-        const Api_key = '80Q279b8CRZeXgzjV0wVOKxNar6PbCqy'
-        const url = `https://api.giphy.com/v1/gifs/random?api_key=${Api_key}`;
+    // async function fetchData()  {
+    //     setLoading(true)
+    //     const Api_key = '80Q279b8CRZeXgzjV0wVOKxNar6PbCqy'
+    //     const url = `https://api.giphy.com/v1/gifs/random?api_key=${Api_key}`;
         
-        const {data} = await axios.get(url)
-        setGifs(data.data.images.downsized_large.url)
-        console.log(data.data.images.downsized_large.url)
-        setLoading(false)
-    }
+    //     const {data} = await axios.get(url)
+    //     setGifs(data.data.images.downsized_large.url)
+    //     console.log(data.data.images.downsized_large.url)
+    //     setLoading(false)
+    // }
     
+    const { gifs , loading , fetchData } = UseGifs();
     function clickHandler() {
        fetchData();
     }
 
-    useEffect(() => {
-        fetchData()
-    } , [])
+    
+    // useEffect(() => {
+    //     fetchData()
+    // } , [])
 
     return (
         <div className={style.card}>

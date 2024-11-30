@@ -1,28 +1,28 @@
 import style from "../Stylesheet/Tag.module.css";
-import axios from "axios";
 import { ClipLoader } from 'react-spinners';
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import UseGifs from "../CostumHooks/useGIfs";
 
 const Tag = () => {
-    const [gifs , setGifs] = useState('')
-    const [loading , setLoading] = useState(false);
+    // const [gifs , setGifs] = useState('')
+    // const [loading , setLoading] = useState(false);
     const [tag , setSearchData] = useState('car')
     
-``
-    async function fetchData() {
-        setLoading(true)
-        const Api_key = '80Q279b8CRZeXgzjV0wVOKxNar6PbCqy'
-        const url = `https://api.giphy.com/v1/gifs/random?api_key=${Api_key}&tag=${tag}`
+    // async function fetchData() {
+    //     setLoading(true)
+    //     const Api_key = '80Q279b8CRZeXgzjV0wVOKxNar6PbCqy'
+    //     const url = `https://api.giphy.com/v1/gifs/random?api_key=${Api_key}&tag=${tag}`
 
-        const {data} = await axios.get(url);
-        setGifs(data.data.images.downsized_large.url)
-        setLoading(false)
-    }
+    //     const {data} = await axios.get(url);
+    //     setGifs(data.data.images.downsized_large.url)
+    //     setLoading(false)
+    // }
 
-    useEffect(()=> {
-        fetchData();
-    } , [])
+    // useEffect(()=> {
+    //     fetchData();
+    // } , [])
 
+    const { gifs , loading , fetchData } = UseGifs(tag);
     function changeHandler(event) {
         setSearchData(event.target.value)
         console.log(tag)
@@ -44,6 +44,7 @@ const Tag = () => {
                 id="search"
                 placeholder="Search a meme here..."
                 onChange={changeHandler}
+                value={tag}
             />
             <button className={style.generateBtn} onClick={clickHandler}><b>GENERATE</b></button>
         </div>
