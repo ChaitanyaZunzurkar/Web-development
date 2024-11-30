@@ -1,0 +1,22 @@
+
+.card {
+    background-color: rgb(71, 201, 71);
+    width: 800px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    border: 2px solid rgb(162, 119, 226);
+    border-radius: 10px;
+  }
+
+  
+  .generateBtn {
+    width: 500px;
+    background-color: rgb(185, 229, 185);
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+  }
