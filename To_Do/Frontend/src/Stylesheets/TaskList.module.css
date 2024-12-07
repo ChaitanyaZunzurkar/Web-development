@@ -1,0 +1,33 @@
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #87cefa; 
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 20vw;
+}
+
+.taskItem:hover {
+    transform: scale(1.02);
+}
+
+.taskText {
+    font-size: 18px;
+    color: #00008b; 
+    font-weight: bold;
+}
+
+.deleteIcon {
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.deleteIcon:hover {
+    color: #ff4500; 
+}

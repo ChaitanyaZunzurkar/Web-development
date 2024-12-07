@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 3px 3px 10px black;
+    width: 100vw;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 178, 249);
+    justify-content: flex-start;
+    -webkit-text-stroke: 2px rgb(0, 178, 249); 
+}
+
+.navLinks {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 5rem;
+}
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.logo {
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid rebeccapurple; */
+}
+
+.btn {
+    background-color: rgb(0, 89, 255);
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    /* margin: 5px 10px; */
+    width: auto;
+    min-width: 80px;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    margin: 0px;
+}
+
+.btn:hover {
+    background-color: rgb(0, 150, 255);
+    border: 2px solid rgb(0, 89, 255);
+}
+
+.btn:active {
+    background-color: rgb(0, 89, 255);
+    border: 2px solid rgb(0, 89, 255);
+}
+
+.navPages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 1rem;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 89, 255);
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: rgb(0, 150, 255);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .logoContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .heading {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px;
+        width: 100px;
+    }
+
+    .btnContainer {
+        flex-direction: column;
+    }
+
+    a {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+}
