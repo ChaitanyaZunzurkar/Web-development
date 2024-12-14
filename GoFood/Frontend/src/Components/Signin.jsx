@@ -24,6 +24,9 @@ const Signin = () => {
       console.log(userData);
       setFormData({ email: "", password: "" });
       navigate("/");
+
+      const token = userData.data.token
+      localStorage.setItem("token" , token)
     } catch (error) {
       console.log("Fail to fetch sigin data");
       console.log(error);

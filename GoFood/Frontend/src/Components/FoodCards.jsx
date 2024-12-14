@@ -30,16 +30,7 @@ const Card = () => {
                 justifyContent:"space-between",
                 alignContent:"center"
             }}>
-                <button onClick={increaseCountHandler}
-                    style={{
-                        border:"none",
-                        backgroundColor:"yellowgreen",
-                        padding:"0px 5px",
-                        height:"30px",
-                        width:"30px"
-                    }}
-                ><strong>+</strong></button>
-                <p>{ count }</p>
+                
                 <button onClick={decreaseCountHandler}
                      style={{
                         border:"none",
@@ -49,6 +40,16 @@ const Card = () => {
                         width:"30px"
                     }}
                 ><strong>-</strong></button>
+                <p>{ count }</p>
+                <button onClick={increaseCountHandler}
+                    style={{
+                        border:"none",
+                        backgroundColor:"yellowgreen",
+                        padding:"0px 5px",
+                        height:"30px",
+                        width:"30px"
+                    }}
+                ><strong>+</strong></button>
                 <strong>Total price : { count * 100} Rs.</strong>
             </div>
         </div>
