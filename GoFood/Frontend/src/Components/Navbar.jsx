@@ -40,7 +40,7 @@ const Navbar = () => {
 
           <ul className="navbar-nav mb-2 mb-lg-0" >
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signin">
+                <NavLink className="nav-link" to="/user/signin">
                   <button className="btn btn-outline-primary">
                     Sign in
                   </button>
@@ -48,7 +48,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">
+                <NavLink className="nav-link" to="/user/signup">
                 <button className="btn btn-outline-primary">
                     Sign up
                   </button>

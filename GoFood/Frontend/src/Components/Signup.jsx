@@ -2,9 +2,10 @@ import style from '../Stylesheets/Signup.module.css';
 import signup from '../assets/signup.png'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Signup = () => {
-  const [formData , setFormData] = useState({ name:'' , email : '' , password : ''})
+  const [formData , setFormData] = useState({ name:'' , email : '' , password : '' , address: '' })
   const navigate = useNavigate();
 
   function changeHandler(event) {
@@ -14,10 +15,20 @@ const Signup = () => {
       })
   }
 
-  function submitHandler(event) {
-    event.preventDefault();
-    console.log(formData)
-    setFormData({name:'' , email:'' , password: ''})
+  async function submitHandler(event) {
+      event.preventDefault();
+      console.log(formData)
+      
+      try {
+        const userData = await axios.post('http://localhost:3000/user/signup' , formData)
+        console.log(userData)
+        navigate('/')
+        setFormData({name:'' , email:'' , password: '' , address:''})
+      }
+      catch(error) {
+        console.log("Fail to fetch user data.")
+        console.error(error)
+      }
   }
 
   return (
@@ -74,6 +85,21 @@ const Signup = () => {
                 type="password"
                 name="password"
                 value={formData.password}
+                onChange={changeHandler}
+              />
+            </div>
+
+            <div className={style['input-container']}>
+              <label className={style['label']} htmlFor="location">
+                <strong>Address</strong>
+              </label>
+              <input
+                className={style['input']}
+                id="location"
+                placeholder="address"
+                type="text"
+                name="location"
+                value={formData.location}
                 onChange={changeHandler}
               />
             </div>

@@ -13,8 +13,8 @@ function App() {
           <Navbar />
           <Routes >
             <Route index path='/' element={<HomePage />} />
-            <Route index path='/signin' element={<Signin />} />
-            <Route index path='/signup' element={<Signup />} />
+            <Route index path='/user/signin' element={<Signin />} />
+            <Route index path='/user/signup' element={<Signup />} />
           </Routes>
           <Footer />
         </BrowserRouter>
