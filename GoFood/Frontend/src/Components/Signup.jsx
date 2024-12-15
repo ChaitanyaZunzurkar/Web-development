@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Signup = () => {
-  const [formData , setFormData] = useState({ name:'' , email : '' , password : '' , address: '' })
+  const [formData , setFormData] = useState({ name:'' , email : '' , password : '' , location: '' })
   const navigate = useNavigate();
 
   function changeHandler(event) {
@@ -20,10 +20,14 @@ const Signup = () => {
       console.log(formData)
       
       try {
-        const userData = await axios.post('http://localhost:3000/user/signup' , formData)
+        const userData = await axios.post('http://localhost:3000/api/v1/signup' , formData)
         console.log(userData)
+
+        const token = userData.data.token
+        localStorage.setItem("token" , token)
+        
         navigate('/')
-        setFormData({name:'' , email:'' , password: '' , address:''})
+        setFormData({name:'' , email:'' , password: '' , location:''})
       }
       catch(error) {
         console.log("Fail to fetch user data.")

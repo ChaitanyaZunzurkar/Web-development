@@ -27,10 +27,16 @@ const Card = () => {
     const [searchTerm, setSearchTerm] = useState(""); 
 
     const changeHandler = (event) => {
-        setSearchTerm(event.target.value); 
+        let value = event.target.value
+        if(value === '') {
+            setFoodItems(backupStorageFoodItems)
+        }
+        setSearchTerm(value);
     };
+
     
-    useEffect(() => {
+    function submitHandler(event) {
+        event.preventDefault()
         if (searchTerm.trim() === "") {
             setFoodItems(backupStorageFoodItems); 
             setIsSearching(false);
@@ -41,7 +47,7 @@ const Card = () => {
             );
             setFoodItems(searchedFoodName); 
         }
-    }, [searchTerm, backupStorageFoodItems]); 
+    }
 
     useEffect(() => {
         fetchingFoodData()
@@ -49,7 +55,7 @@ const Card = () => {
 
     return (
         <div>
-            <form className="d-flex p-2 mx-auto" role="search">
+            <form className="d-flex p-2 mx-auto container" role="search" onSubmit={submitHandler}>
                 <input
                     className="form-control me-2 w-200"
                     type="search"
@@ -58,7 +64,7 @@ const Card = () => {
                     value={searchTerm}
                     onChange={changeHandler}
                 />
-                <button className="btn btn-outline-warning" type="submit">
+                <button className="btn btn-outline-warning " type="submit">
                     Search
                 </button>
             </form>

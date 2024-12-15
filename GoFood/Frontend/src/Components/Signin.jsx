@@ -20,7 +20,7 @@ const Signin = () => {
     console.log(formData);
 
     try {
-      const userData = await axios.post("http://localhost:3000/user/signin",formData);
+      const userData = await axios.post("http://localhost:3000/api/v1/signin",formData);
       console.log(userData);
       setFormData({ email: "", password: "" });
       navigate("/");
