@@ -113,7 +113,7 @@ const Signup = () => {
 
           <div className={style['header']}>
               <span className={style['text-gray']}>Already have an account?</span>
-              <span className={style.signin} onClick={() => navigate('/signin')}>SIGN IN</span>
+              <span className={style.signin} onClick={() => navigate('/api/v1/signin')}>SIGN IN</span>
           </div>
         </div>
       </div>

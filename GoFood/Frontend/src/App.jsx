@@ -4,17 +4,18 @@ import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Signin from './Components/Signin'
 import Signup from './Components/Signup'
+// import { useState } from 'react'
 
 
 function App() {
   return (
     <div>
         <BrowserRouter >
-          <Navbar />
+          <Navbar  />
           <Routes >
             <Route index path='/' element={<HomePage />} />
-            <Route index path='/user/signin' element={<Signin />} />
-            <Route index path='/user/signup' element={<Signup />} />
+            <Route index path='/api/v1/signin' element={<Signin />} />
+            <Route index path='/api/v1/signup' element={<Signup />} />
           </Routes>
           <Footer />
         </BrowserRouter>

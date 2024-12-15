@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 const Carousel = () => {
   return (
     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
+      <div className="carousel-inner z-index-1">
         <div className="carousel-item active">
           <img
             className="d-block w-100"
@@ -14,7 +14,7 @@ const Carousel = () => {
             alt="First slide"
           />
         </div>
-        <div className="carousel-item">
+        <div className="carousel-item z-index-1">
           <img
             className="d-block w-100"
             style={{ height: "60vh", objectFit: "cover" }}
@@ -22,7 +22,7 @@ const Carousel = () => {
             alt="Second slide"
           />
         </div>
-        <div className="carousel-item">
+        <div className="carousel-item z-index-1">
           <img
             className="d-block w-100"
             style={{ height: "60vh", objectFit: "cover" }}
@@ -30,7 +30,7 @@ const Carousel = () => {
             alt="Third slide"
           />
         </div>
-        <div className="carousel-item">
+        <div className="carousel-item z-index-1">
           <img
             className="d-block w-100"
             style={{ height: "60vh", objectFit: "cover" }}

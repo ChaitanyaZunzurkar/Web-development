@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import Carousel  from "../Components/Carousel"
-import FoodCards  from "../Components/FoodCards"
+import Food from "../Components/Food"
 
 export default function HomePage() {
   return (
     <div>
       <Carousel />
-      <FoodCards />
+      <Food />
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { NavLink } from 'react-router-dom';
+// import { useState } from 'react';
 
 const Navbar = () => {
+
   return (
     <nav className="navbar navbar-expand-lg bg-black text-white">
       <div className="container-fluid px-5 mx-2 " >
@@ -26,21 +28,11 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <form className="d-flex p-2 mx-auto" role="search" >
-            <input
-              className="form-control me-2 w-200"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-warning" type="submit">
-              Search
-            </button>
-          </form>
+
 
           <ul className="navbar-nav mb-2 mb-lg-0" >
               <li className="nav-item">
-                <NavLink className="nav-link" to="/user/signin">
+                <NavLink className="nav-link" to="/api/v1/signin">
                   <button className="btn btn-outline-primary">
                     Sign in
                   </button>
@@ -48,7 +40,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to="/user/signup">
+                <NavLink className="nav-link" to="/api/v1/signup">
                 <button className="btn btn-outline-primary">
                     Sign up
                   </button>
