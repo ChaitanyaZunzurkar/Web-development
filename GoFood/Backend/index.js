@@ -18,7 +18,9 @@ const ConnectWithDB = require('./Config/database')
 ConnectWithDB()
 
 const UserRoutes = require('./Routes/user')
-app.use('/user' , UserRoutes)
+const FetchingFoodDataRoutes = require('./Routes/FoodData')
+app.use('/api/v1' , UserRoutes)
+app.use('/api/v1' , FetchingFoodDataRoutes)
 
 app.listen(PORT , () => {
     console.log(`Server started at port : ${PORT}`);
