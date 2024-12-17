@@ -4,21 +4,24 @@ import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Signin from './Components/Signin'
 import Signup from './Components/Signup'
-// import { useState } from 'react'
-
+import AppContextProvider from './Context/AppContext'
+import Cart from './Components/Cart'
 
 function App() {
   return (
     <div>
-        <BrowserRouter >
+      <BrowserRouter >
+        <AppContextProvider >
           <Navbar  />
           <Routes >
             <Route index path='/' element={<HomePage />} />
-            <Route index path='/api/v1/signin' element={<Signin />} />
-            <Route index path='/api/v1/signup' element={<Signup />} />
+            <Route path='/api/v1/signin' element={<Signin />} />
+            <Route path='/api/v1/signup' element={<Signup />} />
+            <Route path='/api/v1/cart' element={<Cart />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </AppContextProvider>
+      </BrowserRouter>
     </div>
   )
 }

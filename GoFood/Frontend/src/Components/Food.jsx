@@ -30,6 +30,7 @@ const Card = () => {
         let value = event.target.value
         if(value === '') {
             setFoodItems(backupStorageFoodItems)
+            setIsSearching(false)
         }
         setSearchTerm(value);
     };

@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../Context/AppContext";
 
 export default function FoodItem({ CategorizedFood }) {
+  const { addToCart } = useContext(AppContext)
   const [count, setCount] = useState(1);
 
   function increaseCountHandler() {
@@ -11,6 +13,10 @@ export default function FoodItem({ CategorizedFood }) {
 
   function decreaseCountHandler() {
     count > 1 ? setCount(count - 1) : 1;
+  }
+
+  function addToCartHandler(CategorizedFood) {
+      addToCart(CategorizedFood)
   }
 
   return (
@@ -57,6 +63,14 @@ export default function FoodItem({ CategorizedFood }) {
             <strong>+</strong>
           </button>
           <strong>Total price : {count * 1000} Rs.</strong>
+
+          <button 
+            type="button"
+            onClick={() => (addToCartHandler(CategorizedFood))}
+            className="btn"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
