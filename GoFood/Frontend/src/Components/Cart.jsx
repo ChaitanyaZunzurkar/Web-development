@@ -6,10 +6,8 @@ export default function Cart() {
     const { foodItemData , setFoodItemData} = useContext(AppContext);
 
     function removeFromCart(id) {
-        const updatedData =  foodItemData.filter((foodItem) => {
-            foodItem._id !== id
-        })
-        setFoodItemData(updatedData)
+        const updatedFoodItems = foodItemData.filter((foodItem) => foodItem._id !== id);
+        setFoodItemData(updatedFoodItems);
     }
 
     return (
