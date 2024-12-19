@@ -2,10 +2,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext, useState } from "react";
 import { AppContext } from "../Context/AppContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-hot-toast';
 
 export default function FoodItem({ CategorizedFood }) {
   const { addToCart } = useContext(AppContext)
   const [count, setCount] = useState(1);
+  const navigate = useNavigate()
 
   function increaseCountHandler() {
     setCount(count + 1);
@@ -16,6 +19,25 @@ export default function FoodItem({ CategorizedFood }) {
   }
 
   function addToCartHandler(CategorizedFood) {
+      const token = localStorage.getItem('token') 
+      console.log("can't find the token")
+      if(!token) {
+        toast("Please sign in to add food to the cart", {
+          style: {
+            background: '#f44336',
+            color: '#fff',          
+            fontWeight: 'bold',     
+            borderRadius: '10px',   
+            padding: '12px',        
+            fontSize: '16px',      
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+          }
+        });
+        
+        navigate('/api/v1/signin')
+        return 
+      }
+      console.log(token)
       addToCart(CategorizedFood)
   }
 

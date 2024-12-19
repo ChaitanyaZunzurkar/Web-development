@@ -6,12 +6,14 @@ import Signin from './Components/Signin'
 import Signup from './Components/Signup'
 import AppContextProvider from './Context/AppContext'
 import Cart from './Components/Cart'
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div>
       <BrowserRouter >
         <AppContextProvider >
+          <Toaster /> 
           <Navbar  />
           <Routes >
             <Route index path='/' element={<HomePage />} />
@@ -22,6 +24,8 @@ function App() {
           <Footer />
         </AppContextProvider>
       </BrowserRouter>
+
+      <Toaster />
     </div>
   )
 }
